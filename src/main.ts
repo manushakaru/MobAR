@@ -141,30 +141,30 @@ NeedleEngine.addContextCreatedCallback((args) => {
   axis.position.y = 1;
   scene.add(axis);
 
-  // const group = new THREE.Group();
+  const group = new THREE.Group();
 
-  // const geometry = new THREE.BoxGeometry(1, 1, 1);
-  // const material = new THREE.MeshStandardMaterial({ color: 0xdddddd });
-  // const cube = new THREE.Mesh(geometry, material);
-  // cube.position.y += 0.5;
-  // group.add(cube);
-  // scene.add(group);
+  const geometry = new THREE.BoxGeometry(1, 1, 1);
+  const material = new THREE.MeshStandardMaterial({ color: 0xdddddd });
+  const cube = new THREE.Mesh(geometry, material);
+  cube.position.y += 0.5;
+  group.add(cube);
+  scene.add(group);
   // scene.add(cube);
 
-  const svgGroup = new THREE.Group();
+  // const svgGroup = new THREE.Group();
   const svgGroup2 = new THREE.Group();
-
-  const obj1 = renderSVG(svgGroup, 1, svgBar);
-  scene.add(svgGroup);
-  svgGroup.position.y += 1;
-  svgGroup.rotation.x = Math.PI;
-  // svgGroup.rotation.y = Math.PI;
-  svgGroup.rotation.z = Math.PI * 2;
-  svgGroup.position.z = -0.6;
-  svgGroup.scale.x = 0.005;
-  svgGroup.scale.y = 0.005;
-  svgGroup.scale.z = 0;
-
+  //
+  // const obj1 = renderSVG(svgGroup, 1, svgBar);
+  // scene.add(svgGroup);
+  // svgGroup.position.y += 1;
+  // svgGroup.rotation.x = Math.PI;
+  // // svgGroup.rotation.y = Math.PI;
+  // svgGroup.rotation.z = Math.PI * 2;
+  // svgGroup.position.z = -0.6;
+  // svgGroup.scale.x = 0.005;
+  // svgGroup.scale.y = 0.005;
+  // svgGroup.scale.z = 0;
+  //
   const obj2 = renderSVG(svgGroup2, 1, svgScatterSmall);
   scene.add(svgGroup2);
   svgGroup2.position.x -= 2;
@@ -179,30 +179,30 @@ NeedleEngine.addContextCreatedCallback((args) => {
 
 
   // Add debug controls
-  const gui = new GUI();
-  const folder = gui.addFolder("Chart");
-  const rotationFolder = folder.addFolder("Rotation");
-  rotationFolder.add(svgGroup.rotation, "x", 0, Math.PI * 2);
-  rotationFolder.add(svgGroup.rotation, "y", 0, Math.PI * 2);
-  rotationFolder.add(svgGroup.rotation, "z", 0, Math.PI * 2);
-  const scaleFolder = folder.addFolder("Scale");
-  scaleFolder.add(svgGroup.scale, "x", 0, 0.001);
-  scaleFolder.add(svgGroup.scale, "y", 0, 0.001);
-  scaleFolder.add(svgGroup.scale, "z", 0, 0.001);
-  const positionFolder = folder.addFolder("Position");
-  positionFolder.add(svgGroup.position, "x", -1, 1);
-  positionFolder.add(svgGroup.position, "y", -1, 1);
-  positionFolder.add(svgGroup.position, "z", -1, 1);
-  folder.close();
+  // const gui = new GUI();
+  // const folder = gui.addFolder("Chart");
+  // const rotationFolder = folder.addFolder("Rotation");
+  // rotationFolder.add(svgGroup.rotation, "x", 0, Math.PI * 2);
+  // rotationFolder.add(svgGroup.rotation, "y", 0, Math.PI * 2);
+  // rotationFolder.add(svgGroup.rotation, "z", 0, Math.PI * 2);
+  // const scaleFolder = folder.addFolder("Scale");
+  // scaleFolder.add(svgGroup.scale, "x", 0, 0.001);
+  // scaleFolder.add(svgGroup.scale, "y", 0, 0.001);
+  // scaleFolder.add(svgGroup.scale, "z", 0, 0.001);
+  // const positionFolder = folder.addFolder("Position");
+  // positionFolder.add(svgGroup.position, "x", -1, 1);
+  // positionFolder.add(svgGroup.position, "y", -1, 1);
+  // positionFolder.add(svgGroup.position, "z", -1, 1);
+  // folder.close();
 
 
-  // const dragControls = GameObject.addNewComponent(group, DragControls);
-  // dragControls.showGizmo = false;
-  // dragControls.useViewAngle = false;
+  const dragControls = GameObject.addNewComponent(group, DragControls);
+  dragControls.showGizmo = false;
+  dragControls.useViewAngle = false;
 
-  const dragControls1 = GameObject.addNewComponent(svgGroup, DragControls);
-  dragControls1.showGizmo = false;
-  dragControls1.useViewAngle = false;
+  // const dragControls1 = GameObject.addNewComponent(svgGroup, DragControls);
+  // dragControls1.showGizmo = false;
+  // dragControls1.useViewAngle = false;
 
   const dragControls2 = GameObject.addNewComponent(svgGroup2, DragControls);
   dragControls2.showGizmo = false;
