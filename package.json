@@ -1,0 +1,31 @@
+{
+  "name": "@needle-tools/vite-template",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite --host",
+    "build:dev": "vite build",
+    "build:production": "npm run build:dev && npm run gltf:transform",
+    "gltf:transform": "npm run transform --prefix node_modules/@needle-tools/gltf-build-pipeline"
+  },
+  "dependencies": {
+    "@needle-tools/engine": "^3.11.0-beta",
+    "three": "npm:@needle-tools/three@0.154.2"
+  },
+  "devDependencies": {
+    "@needle-tools/helper": "^0.7.4",
+    "@types/three": "0.146.0",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
+    "typescript": "^5.0.4",
+    "vite": "<= 4.3.9",
+    "vite-plugin-compression": "^0.5.1"
+  },
+  "author": {
+    "name": "Needle Tools",
+    "email": "hi@needle.tools",
+    "url": "https://needle.tools"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/needle-engine"
+  }
+}
