@@ -10,7 +10,7 @@
   "sceneName": "Minimal",
   "deployOnly": false,
   "generator": "Needle Engine for Unity 3.5.9-pre.2",
-  "gzip": true,
+  "gzip": false,
   "allowHotReload": true,
   "license": "basic",
   "useRapier": true
