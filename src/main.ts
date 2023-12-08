@@ -175,10 +175,10 @@ NeedleEngine.addContextCreatedCallback((args) => {
   svgGroup2.rotation.x = Math.PI;
   // svgGroup.rotation.y = Math.PI;
   svgGroup2.rotation.z = Math.PI * 2;
-  svgGroup2.position.z = -0.6;
-  svgGroup2.scale.x = 0.0005;
-  svgGroup2.scale.y = 0.0005;
-  svgGroup2.scale.z = 0;
+  // svgGroup2.position.z = -0.6;
+  svgGroup2.scale.x = 0.05;
+  svgGroup2.scale.y = 0.05;
+  svgGroup2.scale.z = 0.05;
 
 
   // Add debug controls
