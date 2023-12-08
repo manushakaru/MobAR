@@ -137,9 +137,9 @@ NeedleEngine.addContextCreatedCallback((args) => {
   // const grid = new GridHelper();
   // scene.add(grid);
   //
-  // const axis = new AxesHelper();
-  // axis.position.y = 1;
-  // scene.add(axis);
+  const axis = new AxesHelper();
+  axis.position.y = 1;
+  scene.add(axis);
 
   const group = new THREE.Group();
 
@@ -149,9 +149,9 @@ NeedleEngine.addContextCreatedCallback((args) => {
   cube.position.y += 0.5;
   group.add(cube);
   scene.add(group);
-  group.scale.x = 0.005;
-  group.scale.y = 0.005;
-  group.scale.z = 0.005;
+  group.scale.x = 0.5;
+  group.scale.y = 0.5;
+  group.scale.z = 0.5;
   // scene.add(cube);
 
   // const svgGroup = new THREE.Group();
