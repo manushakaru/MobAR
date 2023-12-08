@@ -93,13 +93,17 @@ async function renderSVG(svgGroup, extrusion, svg) {
       // updateMap.push({ shape, mesh, lines });
       // svgGroup.add(mesh, lines);
 
-      const group = new THREE.Group();
-      updateMap.push({ shape, mesh, lines });
-      group.add(mesh)
-      group.add(lines)
-      svgGroup.add(group);
+      const box = new THREE.Box3().setFromObject(svgGroup);
+      const size = box.getSize(new THREE.Vector3());
+      const yOffset = size.y / -2;
+      const xOffset = size.x / -2;
 
-      console.log(svgGroup);
+      // Offset all of group's elements, to center them
+      svgGroup.children.forEach((item) => {
+        item.position.x = xOffset;
+        item.position.y = yOffset;
+      });
+      svgGroup.rotateX(-Math.PI / 2);
       
     });
   });
@@ -149,9 +153,9 @@ NeedleEngine.addContextCreatedCallback((args) => {
   cube.position.y += 0.5;
   group.add(cube);
   scene.add(group);
-  group.scale.x = 0.5;
-  group.scale.y = 0.5;
-  group.scale.z = 0.5;
+  group.scale.x = 0.05;
+  group.scale.y = 0.05;
+  group.scale.z = 0.05;
   // scene.add(cube);
 
   // const svgGroup = new THREE.Group();
@@ -167,7 +171,7 @@ NeedleEngine.addContextCreatedCallback((args) => {
   // svgGroup.scale.x = 0.005;
   // svgGroup.scale.y = 0.005;
   // svgGroup.scale.z = 0;
-  //
+
   const obj2 = renderSVG(svgGroup2, 1, svgScatterSmall);
   scene.add(svgGroup2);
   svgGroup2.position.x -= 2;
@@ -176,9 +180,9 @@ NeedleEngine.addContextCreatedCallback((args) => {
   // svgGroup.rotation.y = Math.PI;
   svgGroup2.rotation.z = Math.PI * 2;
   // svgGroup2.position.z = -0.6;
-  svgGroup2.scale.x = 0.05;
-  svgGroup2.scale.y = 0.05;
-  svgGroup2.scale.z = 0.05;
+  svgGroup2.scale.x = 0.005;
+  svgGroup2.scale.y = 0.005;
+  svgGroup2.scale.z = 0.005;
 
 
   // Add debug controls
