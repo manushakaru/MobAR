@@ -149,9 +149,9 @@ NeedleEngine.addContextCreatedCallback((args) => {
   cube.position.y += 0.5;
   group.add(cube);
   scene.add(group);
-  group.scale.x = 0.0005;
-  group.scale.y = 0.0005;
-  group.scale.z = 0.0005;
+  group.scale.x = 0.005;
+  group.scale.y = 0.005;
+  group.scale.z = 0.005;
   // scene.add(cube);
 
   // const svgGroup = new THREE.Group();
