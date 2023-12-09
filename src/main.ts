@@ -147,30 +147,30 @@ NeedleEngine.addContextCreatedCallback((args) => {
 
   const group = new THREE.Group();
 
-  const geometry = new THREE.BoxGeometry(1, 1, 1);
-  const material = new THREE.MeshStandardMaterial({ color: 0xdddddd });
-  const cube = new THREE.Mesh(geometry, material);
-  cube.position.y += 0.5;
-  group.add(cube);
-  scene.add(group);
-  group.scale.x = 0.05;
-  group.scale.y = 0.05;
-  group.scale.z = 0.05;
+  // const geometry = new THREE.BoxGeometry(1, 1, 1);
+  // const material = new THREE.MeshStandardMaterial({ color: 0xdddddd });
+  // const cube = new THREE.Mesh(geometry, material);
+  // cube.position.y += 0.5;
+  // group.add(cube);
+  // scene.add(group);
+  // group.scale.x = 0.05;
+  // group.scale.y = 0.05;
+  // group.scale.z = 0.05;
   // scene.add(cube);
 
-  // const svgGroup = new THREE.Group();
+  const svgGroup = new THREE.Group();
   const svgGroup2 = new THREE.Group();
   //
-  // const obj1 = renderSVG(svgGroup, 1, svgBar);
-  // scene.add(svgGroup);
-  // svgGroup.position.y += 1;
-  // svgGroup.rotation.x = Math.PI;
-  // // svgGroup.rotation.y = Math.PI;
-  // svgGroup.rotation.z = Math.PI * 2;
-  // svgGroup.position.z = -0.6;
-  // svgGroup.scale.x = 0.005;
-  // svgGroup.scale.y = 0.005;
-  // svgGroup.scale.z = 0;
+  const obj1 = renderSVG(svgGroup, 1, svgBar);
+  scene.add(svgGroup);
+  svgGroup.position.y += 1;
+  svgGroup.rotation.x = Math.PI;
+  // svgGroup.rotation.y = Math.PI;
+  svgGroup.rotation.z = Math.PI * 2;
+  svgGroup.position.z = -0.6;
+  svgGroup.scale.x = 0.005;
+  svgGroup.scale.y = 0.005;
+  svgGroup.scale.z = 0;
 
   const obj2 = renderSVG(svgGroup2, 1, svgScatterSmall);
   scene.add(svgGroup2);
@@ -203,13 +203,13 @@ NeedleEngine.addContextCreatedCallback((args) => {
   // folder.close();
 
 
-  const dragControls = GameObject.addNewComponent(group, DragControls);
-  dragControls.showGizmo = false;
-  dragControls.useViewAngle = false;
+  // const dragControls = GameObject.addNewComponent(group, DragControls);
+  // dragControls.showGizmo = false;
+  // dragControls.useViewAngle = false;
 
-  // const dragControls1 = GameObject.addNewComponent(svgGroup, DragControls);
-  // dragControls1.showGizmo = false;
-  // dragControls1.useViewAngle = false;
+  const dragControls1 = GameObject.addNewComponent(svgGroup, DragControls);
+  dragControls1.showGizmo = false;
+  dragControls1.useViewAngle = false;
 
   const dragControls2 = GameObject.addNewComponent(svgGroup2, DragControls);
   dragControls2.showGizmo = false;
