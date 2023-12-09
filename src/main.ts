@@ -141,9 +141,9 @@ NeedleEngine.addContextCreatedCallback((args) => {
   // const grid = new GridHelper();
   // scene.add(grid);
   //
-  const axis = new AxesHelper();
-  axis.position.y = 1;
-  scene.add(axis);
+  // const axis = new AxesHelper();
+  // axis.position.y = 1;
+  // scene.add(axis);
 
   const group = new THREE.Group();
 
@@ -168,8 +168,8 @@ NeedleEngine.addContextCreatedCallback((args) => {
   // svgGroup.rotation.y = Math.PI;
   svgGroup.rotation.z = Math.PI * 2;
   svgGroup.position.z = -0.6;
-  svgGroup.scale.x = 0.005;
-  svgGroup.scale.y = 0.005;
+  svgGroup.scale.x = 0.05;
+  svgGroup.scale.y = 0.05;
   svgGroup.scale.z = 0;
 
   const obj2 = renderSVG(svgGroup2, 1, svgScatterSmall);
@@ -180,9 +180,9 @@ NeedleEngine.addContextCreatedCallback((args) => {
   // svgGroup.rotation.y = Math.PI;
   svgGroup2.rotation.z = Math.PI * 2;
   // svgGroup2.position.z = -0.6;
-  svgGroup2.scale.x = 0.005;
-  svgGroup2.scale.y = 0.005;
-  svgGroup2.scale.z = 0.005;
+  svgGroup2.scale.x = 0.05;
+  svgGroup2.scale.y = 0.05;
+  svgGroup2.scale.z = 0.05;
 
 
   // Add debug controls
